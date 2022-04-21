@@ -1,9 +1,6 @@
 #include "../include/turing_machine.h"
 
-Turing_Machine::Turing_Machine()
-{
-  tape.reserve(40);
-}
+Turing_Machine::Turing_Machine() {}
 
 auto Turing_Machine::read_instructions()-> void
 {
@@ -26,7 +23,6 @@ auto Turing_Machine::read_instructions()-> void
   }
 }
 
-
 auto Turing_Machine::print_instructions() const -> void
 {
   for (const auto& row : instructions)
@@ -38,5 +34,10 @@ auto Turing_Machine::print_instructions() const -> void
 
     std::cout << '\n';
   }
+}
+
+auto Turing_Machine::process_instructions() -> void
+{
+  // To do
 }
 
