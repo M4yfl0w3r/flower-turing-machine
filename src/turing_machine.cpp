@@ -1,6 +1,9 @@
 #include "../include/turing_machine.h"
 
-Turing_Machine::Turing_Machine() {}
+Turing_Machine::Turing_Machine() 
+{
+  tape.reserve(40);
+}
 
 auto Turing_Machine::read_instructions()-> void
 {
