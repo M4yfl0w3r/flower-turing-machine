@@ -11,7 +11,7 @@ Single instruction: `S_0,q_i,S_z,q_j,L/R`
 
 Tape form: `#(symbols)#`
 - available symbols: # 1 0 x L R
-  - \# is empty field
-  - x is end state
+  - \# - an empty field
+  - x - end state
 
 
