@@ -59,12 +59,12 @@ auto Turing_Machine::setup_parameters(size_t i) -> void
   new_symbol = instructions[i][2];
   new_state = instructions[i][3];
   turn = instructions[i][4];
+
+  head_pos = tape.length() - 2;
 }
 
 auto Turing_Machine::process_instructions() -> void
 {
-  // (0 old_symbol, 1 old_state, 2 new_symbol, 3 new_state, 4 turn)
-
   for (size_t i = 0; i < instructions.size(); i++)
   {
     setup_parameters(i);
@@ -72,7 +72,7 @@ auto Turing_Machine::process_instructions() -> void
 
   std::cout << tape << " ↓ \n";
 
-  while (tape[head_pos] != '#')
+  while (current_state != 'x')
   {
     size_t ins = current_instruction(tape[head_pos]);
 
@@ -85,6 +85,7 @@ auto Turing_Machine::process_instructions() -> void
       else if (instructions[ins][4] == 'R') head_pos++;
       else return;
     }
+    else return;
 
     std::cout << tape << " ↓ \n";
   }

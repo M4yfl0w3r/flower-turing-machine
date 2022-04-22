@@ -26,7 +26,7 @@ public:
     turn;
 
   inline static int 
-    head_pos = 1;
+    head_pos;
 
 public:
   Turing_Machine();
