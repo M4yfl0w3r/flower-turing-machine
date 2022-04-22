@@ -10,3 +10,4 @@ int main()
   machine.read_instructions();
   machine.process_instructions();
 }
+

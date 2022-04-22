@@ -10,4 +10,3 @@ Single instruction: `(S_0, q_i, S_z, q_j, L/R)`
 - `q_j` - new state 
 - `L/R` - move left / right 
 
-

@@ -1,5 +1,4 @@
 #include "../include/turing_machine.h"
-#include <limits>
 
 Turing_Machine::Turing_Machine() 
 {

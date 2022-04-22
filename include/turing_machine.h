@@ -5,7 +5,6 @@
 #include <iostream>
 #include <limits>
 
-
 class Turing_Machine
 {
 
@@ -40,5 +39,4 @@ private:
   auto setup_parameters(size_t) -> void;
   auto current_instruction(char) const -> size_t;
 };
-
 
