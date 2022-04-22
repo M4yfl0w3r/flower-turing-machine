@@ -2,7 +2,7 @@
 
 Turing_Machine::Turing_Machine() 
 {
-  tape.reserve(40);
+  tape.reserve(20);
 }
 
 auto Turing_Machine::read_instructions() -> void
@@ -39,7 +39,7 @@ auto Turing_Machine::print_instructions() const -> void
   }
 }
 
-auto Turing_Machine::current_instruction(char symbol) const -> size_t
+auto Turing_Machine::current_instruction(char symbol) const -> int
 {
   for (size_t i = 0; i < instructions.size(); i++)
   {
@@ -49,7 +49,7 @@ auto Turing_Machine::current_instruction(char symbol) const -> size_t
     }
   }
 
-  return std::numeric_limits<size_t>::max();
+  return -1;
 }
 
 auto Turing_Machine::setup_parameters(size_t i) -> void
@@ -74,9 +74,9 @@ auto Turing_Machine::process_instructions() -> void
 
   while (current_state != 'x')
   {
-    size_t ins = current_instruction(tape[head_pos]);
+    int ins = current_instruction(tape[head_pos]);
 
-    if (ins != std::numeric_limits<size_t>::max())
+    if (ins != -1)
     {
       tape[head_pos] = instructions[ins][2];
       current_state = instructions[ins][3];

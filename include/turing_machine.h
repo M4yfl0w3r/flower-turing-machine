@@ -37,6 +37,6 @@ public:
 
 private:
   auto setup_parameters(size_t) -> void;
-  auto current_instruction(char) const -> size_t;
+  auto current_instruction(char) const -> int;
 };
 
