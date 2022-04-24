@@ -3,6 +3,7 @@
 #include <vector>
 #include <fstream>
 #include <iostream>
+#include <optional>
 
 class Turing_Machine
 {
@@ -31,11 +32,11 @@ public:
   Turing_Machine();
 
   auto read_instructions() -> void;
-  auto print_instructions() const -> void; // just for testing i guess
+  auto print_instructions() const -> void; 
   auto process_instructions() -> void; 
 
 private:
   auto setup_parameters(size_t) -> void;
-  auto current_instruction(char) const -> int;
+  auto current_instruction(char) const -> std::optional<size_t>;
 };
 

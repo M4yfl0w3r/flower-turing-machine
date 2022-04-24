@@ -39,7 +39,7 @@ auto Turing_Machine::print_instructions() const -> void
   }
 }
 
-auto Turing_Machine::current_instruction(char symbol) const -> int
+auto Turing_Machine::current_instruction(char symbol) const -> std::optional<size_t>
 {
   for (size_t i = 0; i < instructions.size(); i++)
   {
@@ -49,7 +49,7 @@ auto Turing_Machine::current_instruction(char symbol) const -> int
     }
   }
 
-  return -1;
+  return {};
 }
 
 auto Turing_Machine::setup_parameters(size_t i) -> void
@@ -74,9 +74,11 @@ auto Turing_Machine::process_instructions() -> void
 
   while (current_state != 'x')
   {
-    int ins = current_instruction(tape[head_pos]);
+    std::optional<size_t> value = current_instruction(tape[head_pos]);
 
-    if (ins != -1)
+    size_t ins = value.value();
+
+    if (value)
     {
       tape[head_pos] = instructions[ins][2];
       current_state = instructions[ins][3];
