@@ -14,4 +14,9 @@ Tape form: `#(symbols)#`
   - \# - an empty field
   - x - end state
 
+Tape is being read as an program input <br/>
+Instructions are being read from a file instructions.txt
+
+
+
 
